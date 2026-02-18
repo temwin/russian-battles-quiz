@@ -6,8 +6,8 @@ import Message from "./components/Message/Message";
 import Popup from "./components/Popup/Popup";
 import styles from "./App.module.css";
 
-const successSound = new Audio("/sounds/success.mp3");
-const errorSound = new Audio("/sounds/error.mp3");
+const successSound = new Audio(`${import.meta.env.BASE_URL}sounds/success.mp3`);
+const errorSound = new Audio(`${import.meta.env.BASE_URL}sounds/error.mp3`);
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);

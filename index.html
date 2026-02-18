@@ -2,38 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <!-- Основная ICO (для старых браузеров) -->
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-
-    <!-- PNG для современных браузеров -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-
-    <!-- Для Android / Chrome -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="/android-chrome-512x512.png"
-    />
-
-    <!-- Для iPhone / iPad -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-
-    <!-- SVG (для новых браузеров) -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
+    <link rel="shortcut icon" href="%BASE_URL%favicon.ico" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="%BASE_URL%android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="%BASE_URL%android-chrome-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>battle-quiz-svg</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Vite сам вставит нужный скрипт при сборке -->
   </body>
 </html>

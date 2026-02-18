@@ -1,0 +1,118 @@
+.container {
+  flex: 1;
+  margin: 20px 0 0 0px;
+  background: radial-gradient(circle at 30% 40%, #1e2a3a, #0a0f17);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(200, 180, 100, 0.2) inset;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  min-height: 0;
+  position: relative;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(220, 200, 120, 0.1),
+    transparent 70%
+  );
+  filter: blur(30px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mapImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.markersLayer {
+  position: absolute; /* поверх карты */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* чтобы клики проходили сквозь слой */
+}
+
+/* ===== КРАСИВЫЕ МАРКЕРЫ (СВЕЧЕНИЕ) ===== */
+.marker {
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  filter: drop-shadow(0 0 6px currentColor);
+  stroke: white;
+  stroke-width: 2;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: drop 0.6s ease-out;
+}
+
+.marker:hover {
+  transform: scale(1.5);
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+/* hover-эффекты после ответа */
+.marker.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+.marker.disabled:hover {
+  r: 8;
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* 🔵 Синий (обычный) */
+.marker[fill="#3b82f6"] {
+  filter: drop-shadow(0 0 8px #3b82f6);
+}
+
+/* 🟢 Зелёный (правильно) */
+.marker[fill="#4caf50"] {
+  filter: drop-shadow(0 0 8px #4caf50);
+}
+
+/* 🔴 Красный (неправильно) */
+.marker[fill="#f44336"] {
+  filter: drop-shadow(0 0 8px #f44336);
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-500px) scale(0.5);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(10px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,42 @@
+.header {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .topRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .counter {
+    color: #666;
+    font-size: 14px;
+  }
+  
+  .score {
+    background-color: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .question {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+  }
+  
+  .battleName {
+    color: #3b82f6;
+  }
+  
+  .date {
+    color: #666;
+    font-style: italic;
+    margin: 5px 0 0;
+  }

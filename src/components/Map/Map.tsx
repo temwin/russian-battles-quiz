@@ -6,7 +6,7 @@ import { battles } from "../../data/battles";
 interface MapProps {
   currentBattle: (typeof battles)[0];
   onBattleClick: (battleId: string) => void;
-  selectedId: string | null; 
+  selectedId: string | null;
   isCorrect: boolean | null;
   isAnswered: boolean;
 }
@@ -14,7 +14,7 @@ interface MapProps {
 export default function Map({
   currentBattle,
   onBattleClick,
-  selectedId, 
+  selectedId,
   isCorrect,
   isAnswered,
 }: MapProps) {
@@ -65,7 +65,7 @@ export default function Map({
     const xPercent = (svgX / viewBoxWidth) * 100;
     const yPercent = (svgY / viewBoxHeight) * 100;
 
-    const tolerance = 1; // радиус в процентах
+    const tolerance = 1;
     let clickedBattleId = "";
 
     battles.forEach((battle) => {
